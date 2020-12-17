@@ -5,11 +5,12 @@ from selenium import webdriver
 #from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
-contact = "shameelka"
+
+contact = "Contact name" #specify the contact or group to whome you will send the msgs
 #text = "Hey, this message was sent using python"
 #filepath = 'D:/Userfiles/Desktop/Python Whatsapp/1.png'
-driver = webdriver.Chrome()
-driver.get("https://web.whatsapp.com")
+driver = webdriver.Chrome() #download chromedriver to the script directory
+driver.get("https://web.whatsapp.com") #Open whatsapp web and scan qr code. then hit enter.
 print("Scan QR Code, And then Enter")
 input()
 print("Logged In")
@@ -20,14 +21,22 @@ print("Logged In")
 #time.sleep(2)
 #input_box_search.send_keys(contact)
 #time.sleep(2)
+
+#find your contact on the left pane and click on them to select.
 selected_contact = driver.find_element_by_xpath("//span[@title='"+contact+"']")
 selected_contact.click()
 
-filesforme={1:"ss",2:"dd",3:"fff",4:"ee",5:"z",6:"t",7:"e",8:"d",9:"g",10:"h"}
+#filepaths for your images.
+filesforme={1:"filepath1",2:"filepath2",3:"filepath3",4:"filepath4",5:"filepath5",6:"filepath6",7:"filepath7",8:"filepath8",9:"filepath9",10:"filepath10"}
 
+#number of time the loop should run, each time sending one msg.
 for m in range (0,10):
+    #change the filepath each time.
     for key in filesforme:
             filepath_= (filesforme[key])
+
+            #send an image then break out of loop. I think this loop is actually not needed.
+            #i will work on it later
             for i in range(0,1):
                 attachment_box=driver.find_element_by_xpath('//div[@title="Attach"]')
                 attachment_box.click()
