@@ -9,7 +9,7 @@ import time
 contact = "Contact name" #specify the contact or group to whome you will send the msgs
 #text = "Hey, this message was sent using python"
 #filepath = 'D:/Userfiles/Desktop/Python Whatsapp/1.png'
-driver = webdriver.Chrome() #download chromedriver to the script directory
+driver = webdriver.Chrome() #we need to download chromedriver to the script directory for this to work.
 driver.get("https://web.whatsapp.com") #Open whatsapp web and scan qr code. then hit enter.
 print("Scan QR Code, And then Enter")
 input()
